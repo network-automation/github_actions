@@ -5,6 +5,6 @@ workflow "Linklight Test Workflow" {
 
 action "Call httpbin" {
   uses = "swinton/httpie.action@master"
-  args = ["POST", "ansible.rhdemo.io/api/v2/job_templates/84/launch/", "-a=$USER_PASSWORD"]
+  args = ["POST", "https://ansible.rhdemo.io/api/v2/job_templates/84/launch/", "--auth=$USER_PASSWORD", "--verify=no"]
   secrets = ["USER_PASSWORD"]
 }
